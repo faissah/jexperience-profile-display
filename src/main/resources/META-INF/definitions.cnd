@@ -1,0 +1,14 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+
+[jmix:jexperienceComponents] > jmix:droppableContent mixin
+
+[jnt:jexperienceProperty] > jnt:content,  jmix:jexperienceComponents
+ - jExpCard (string, choicelist[ParentPropertyInitializer='jExpCardsToFetch',resourceBundle])
+ - jExpProperty (string, choicelist[UnomiProfilePropertiesInitializer, dependentProperties='jExpCard',resourceBundle]) indexed=no
+ - propertyLabel (String)
+
+
+[jnt:jexperienceProfile] > jnt:content, jmix:jexperienceComponents
+ - jExpCardsToFetch (string, choicelist[UnomiProfilePCardsInitializer, resourceBundle]) multiple indexed=no
+ + * (jnt:jexperienceProperty)
