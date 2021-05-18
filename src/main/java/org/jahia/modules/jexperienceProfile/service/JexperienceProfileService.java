@@ -10,6 +10,6 @@ public interface JexperienceProfileService {
 
     String getProfileId(HttpServletRequest httpServletRequest, String siteKey, boolean checkRequestParameters);
 
-    Map<String, String> getProfileProperties(RenderContext renderContext) throws IOException;
+    Map<String, Object> getProfileProperties(RenderContext renderContext) throws IOException;
 
     }

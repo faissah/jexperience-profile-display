@@ -14,7 +14,7 @@
         <description>get profile properties</description>
         <name>getProfileProp</name>
         <function-class>org.jahia.modules.jexperienceProfile.taglib.JexperienceProfileTaglib</function-class>
-        <function-signature>java.util.Map getProfileProps(org.jahia.services.render.RenderContext)</function-signature>
+        <function-signature>org.json.JSONObject getProfileProps(org.jahia.services.render.RenderContext)</function-signature>
         <example> </example>
     </function>
 </taglib>

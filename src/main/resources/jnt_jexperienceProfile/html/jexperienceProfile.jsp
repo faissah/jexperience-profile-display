@@ -18,19 +18,18 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
-asdfasdf
 <c:if test="${renderContext.editMode }">
     <template:module path="*"/>
 </c:if>
-<c:set var="props"
-       value="${xProfile:getProfileProp(renderContext)}"/>
 
 
-    <c:forEach var="prop" items="${props}">
-        <div class="propItem">
-            <span class="propValue"><b>${prop.value}</b></span>
-        </div>
+<c:set var="profileProperties" value="${xProfile:getProfileProp(renderContext)}"/>
+<c:set var="profileProperties" value="${profileProperties}" scope="request"/>
+
+    <c:forEach items="${currentNode.nodes}" var="profileProperty">
+        <c:if test="${jcr:isNodeType(profileProperty,'jnt:jexperienceProperty')}">
+            <template:module node="${profileProperty}" view="default"/>
+        </c:if>
     </c:forEach>
 
 

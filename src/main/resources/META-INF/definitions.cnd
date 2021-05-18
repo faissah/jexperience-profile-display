@@ -6,7 +6,7 @@
 [jnt:jexperienceProperty] > jnt:content,  jmix:jexperienceComponents
  - jExpCard (string, choicelist[ParentPropertyInitializer='jExpCardsToFetch',resourceBundle])
  - jExpProperty (string, choicelist[UnomiProfilePropertiesInitializer, dependentProperties='jExpCard',resourceBundle]) indexed=no
- - propertyLabel (String)
+ - propertyLabel (String) mandatory
 
 
 [jnt:jexperienceProfile] > jnt:content, jmix:jexperienceComponents

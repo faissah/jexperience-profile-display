@@ -9,6 +9,8 @@
 <%@ taglib prefix="query" uri="http://www.jahia.org/tags/queryLib" %>
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="s" uri="http://www.jahia.org/tags/search" %>
+<%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
+
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -17,4 +19,18 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+
+
+<c:set var="propName" value='${currentNode.properties["jExpProperty"].string}'/>
+
+<c:choose>
+    <c:when test="${profileProperties.has(propName)}">
+        <h5>${currentNode.properties["propertyLabel"].string}: ${profileProperties.get(propName)}</h5>
+    </c:when>
+    <c:otherwise>
+        <h5>${currentNode.properties["propertyLabel"].string}: N/A</h5>
+    </c:otherwise>
+</c:choose>
+
+
 
